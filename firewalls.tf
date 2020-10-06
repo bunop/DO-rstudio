@@ -17,6 +17,14 @@ resource "digitalocean_firewall" "wp5image" {
     source_addresses = ["${var.MY_IP_ADDRESS}/32"]
   }
 
+  # shiny server
+  inbound_rule {
+    protocol         = "tcp"
+    port_range       = "3838"
+    source_addresses = ["${var.MY_IP_ADDRESS}/32"]
+  }
+
+  # rstudio server
   inbound_rule {
     protocol         = "tcp"
     port_range       = "8787"
