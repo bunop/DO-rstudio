@@ -32,3 +32,7 @@ variable "IMAGE" {
   type    = string
   default = "simplystatistics-rstudio-18-04"
 }
+
+variable "MY_IP_ADDRESS" {
+  type = string
+}
