@@ -4,7 +4,6 @@ variable "DO_TOKEN" {}
 # set domain name
 variable "DOMAIN_NAME" {
   type    = string
-  default = "paolocozzi.cloud"
 }
 
 # Name of your project. Will be prepended to most resources
