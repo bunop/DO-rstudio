@@ -18,3 +18,7 @@ data "digitalocean_domain" "personal" {
 data "digitalocean_vpc" "vpc" {
   name = var.VPC_NAME
 }
+
+data "digitalocean_image" "rstudio" {
+  name = var.IMAGE
+}

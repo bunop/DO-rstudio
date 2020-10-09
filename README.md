@@ -7,6 +7,18 @@ instance on DigitalOcean using [terraform](https://www.terraform.io/)
 with [digitalocean](https://registry.terraform.io/providers/digitalocean/digitalocean/latest/docs)
 provider.
 
+This branch in particular will start the rstudio image from a custom image (ideally
+a snaphsot derived from a working image). The data resource:
+
+```
+data "digitalocean_image" "rstudio" {
+  name = var.IMAGE
+}
+```
+
+Will search for a custom image in the user space using `var.IMAGE` as an input. Set
+your image name by overriding the default `IMAGE` name defined in `vars.tf`
+
 ## Set up a custom .tfvars file
 
 Add custom variables and override default parameters using a `*.tfvars` file
@@ -17,6 +29,7 @@ MY_IP_ADDRESS = <your ip address>
 DO_TOKEN      = <your token>
 SIZE          = "s-1vcpu-2gb"
 DOMAIN_NAME   = <your digitalocean managed domain>
+IMAGE         = <your rstudio snaphsot>
 ```
 
 Take a look to `variables.tf` to customize your instance according your needs.

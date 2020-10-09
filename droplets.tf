@@ -1,7 +1,7 @@
 
 # Create a new Droplet. Using variables and conditional to determine image name
 resource "digitalocean_droplet" "rstudio" {
-  image  = var.IMAGE
+  image  = data.digitalocean_image.rstudio.id
   name   = var.DROPLET_NAME
   region = var.REGION
   size   = var.SIZE
