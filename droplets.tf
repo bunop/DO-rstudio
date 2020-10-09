@@ -2,7 +2,7 @@
 # Create a new Droplet. Using variables and conditional to determine image name
 resource "digitalocean_droplet" "rstudio" {
   image  = var.IMAGE
-  name   = "rstudio-server"
+  name   = var.DROPLET_NAME
   region = var.REGION
   size   = var.SIZE
 
@@ -16,6 +16,9 @@ resource "digitalocean_droplet" "rstudio" {
 
   # should I resize disk when resizing a droplet?
   resize_disk = false
+
+  # What VPC to put our droplets in
+  vpc_uuid = data.digitalocean_vpc.vpc.id
 }
 
 output "rstudio_address" {

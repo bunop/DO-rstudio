@@ -3,7 +3,7 @@ variable "DO_TOKEN" {}
 
 # set domain name
 variable "DOMAIN_NAME" {
-  type    = string
+  type = string
 }
 
 # Name of your project. Will be prepended to most resources
@@ -32,6 +32,19 @@ variable "IMAGE" {
   default = "simplystatistics-rstudio-18-04"
 }
 
+# the name of the created droplet
+variable "DROPLET_NAME" {
+  type    = string
+  default = "rstudio-server"
+}
+
+# my IP address (which is allowed to connect)
 variable "MY_IP_ADDRESS" {
   type = string
+}
+
+# the VPC used
+variable "VPC_NAME" {
+  type    = string
+  default = "default-fra1"
 }

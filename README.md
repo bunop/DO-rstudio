@@ -15,7 +15,7 @@ Add custom variables and override default parameters using a `*.tfvars` file
 ```
 MY_IP_ADDRESS = <your ip address>
 DO_TOKEN      = <your token>
-SIZE          = "s-1vcpu-2gb
+SIZE          = "s-1vcpu-2gb"
 DOMAIN_NAME   = <your digitalocean managed domain>
 ```
 
